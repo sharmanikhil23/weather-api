@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 const dotEnv = require("dotenv");
 const getLocation = require("./src/location");
 const getWeather = require("./src/weather");
 const cors = require("cors");
 
-app.use(cors());
+app.use(cors({ origin: `*` }));
 
 app.get("/", (req, res) => {
   if (req.query.location == undefined) {
