@@ -16,11 +16,12 @@ const getWeather = ({ latitude, longitude }, callback) => {
     .then((response) => {
       if (response.status === 200) {
         return response.json();
+      } else {
+        callback({ error: "There is error is getting weather" }, undefined);
       }
     })
     .then((data) => {
-      console.log(data);
-      callback(undefined, data);
+      return callback(undefined, data);
     });
 };
 

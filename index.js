@@ -16,11 +16,12 @@ app.get("/", (req, res) => {
       if (error !== undefined) {
         res.status(404).json(error);
       } else {
+        console.log(data + " Coordinates");
         getWeather(data, (error, result) => {
-          if (error !== undefined) {
+          if (error != undefined) {
             res.status(404).json(error);
           } else {
-            console.log(result);
+            console.log(result + "complete Weather");
             res.status(200).type("json").send(result);
           }
         });
