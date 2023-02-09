@@ -3,7 +3,6 @@ const { response } = require("express");
 const { resolve } = require("path");
 const path = require("path");
 const { features } = require("process");
-const fetch = require("node-fetch");
 
 let envLocation = path.format({
   root: __dirname,
