@@ -10,7 +10,7 @@ let envLocation = path.format({
 dotEnv = dotEnv.config({ path: envLocation });
 
 const getWeather = ({ latitude, longitude }, callback) => {
-  let url = `http://api.weatherapi.com/v1/forecast.json?key=${dotEnv.parsed.WEATHER}&q=${latitude},${longitude}&days=4&aqi=yes&alerts=yes`;
+  let url = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER}&q=${latitude},${longitude}&days=4&aqi=yes&alerts=yes`;
 
   fetch(url)
     .then((response) => {

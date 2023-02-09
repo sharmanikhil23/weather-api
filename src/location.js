@@ -13,7 +13,7 @@ let envLocation = path.format({
 dotEnv = dotEnv.config({ path: envLocation });
 
 const getLocation = (location, callback) => {
-  let url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=${dotEnv.parsed.MAPBOXKEY}`;
+  let url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=${process.env.MAPBOXKEY}`;
 
   fetch(url)
     .then((response) => {
