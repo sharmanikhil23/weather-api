@@ -24,6 +24,7 @@ const getLocation = (location, callback) => {
       }
     })
     .then((data) => {
+      console.log(data);
       if (data.features.length !== 0) {
         callback(undefined, {
           latitude: data.features[0].center[1],

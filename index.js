@@ -14,11 +14,11 @@ app.get("/", (req, res) => {
   } else {
     getLocation(req.query.location, (error, data) => {
       if (error !== undefined) {
-        return res.status(404).json(error);
+        res.status(404).json(error);
       } else {
         getWeather(data, (error, result) => {
           if (error != undefined) {
-            return res.status(404).json(error);
+            res.status(404).json(error);
           } else {
             res.status(200).type("json").send(result);
           }
