@@ -1,5 +1,5 @@
-const app = require("./app");
 const express = require("express");
+const app = express();
 const port = process.env.PORT;
 const dotEnv = require("dotenv");
 const getLocation = require("./src/location");
