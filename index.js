@@ -16,11 +16,13 @@ app.get("/", (req, res) => {
       if (error !== undefined) {
         res.status(404).json(error);
       } else {
-        getWeather(data, (error, data) => {
+        getWeather(data, (error, result) => {
+          console.log(data);
           if (error !== undefined) {
             res.status(404).json(error);
           } else {
-            res.status(200).type("json").send(data);
+            console.log(result);
+            res.status(200).type("json").send(result);
           }
         });
       }
