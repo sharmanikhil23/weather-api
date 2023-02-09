@@ -14,14 +14,12 @@ app.get("/", (req, res) => {
   } else {
     getLocation(req.query.location, (error, data) => {
       if (error !== undefined) {
-        res.status(404).json(error);
+        return res.status(404).json(error);
       } else {
-        console.log(data + " Coordinates");
         getWeather(data, (error, result) => {
           if (error != undefined) {
-            res.status(404).json(error);
+            return res.status(404).json(error);
           } else {
-            console.log(result + "complete Weather");
             res.status(200).type("json").send(result);
           }
         });

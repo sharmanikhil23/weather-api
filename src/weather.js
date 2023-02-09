@@ -17,6 +17,7 @@ const getWeather = ({ latitude, longitude }, callback) => {
       if (response.status === 200) {
         return response.json();
       } else {
+        console.log(response.status);
         callback({ error: "There is error is getting weather" }, undefined);
       }
     })
