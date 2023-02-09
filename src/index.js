@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT;
 const dotEnv = require("dotenv");
-const getLocation = require("./src/location");
-const getWeather = require("./src/weather");
+const getLocation = require("./location");
+const getWeather = require("./weather");
 const cors = require("cors");
 
 app.use(cors({ origin: `*` }));
