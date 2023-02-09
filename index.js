@@ -27,11 +27,7 @@ app.get("/", (req, res) => {
     });
   }
 });
-app.get("/ip", (req, res) => {
-  req.headers["x-forwarded-for"];
-  console.log(req.socket.remoteAddress);
-  res.send("Hello World");
-});
+
 app.listen(port, () => {
   console.log(`App Started At Port` + port);
 });
