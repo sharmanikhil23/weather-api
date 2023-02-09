@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 const dotEnv = require("dotenv");
 const getLocation = require("./src/location");
 const getWeather = require("./src/weather");
