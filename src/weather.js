@@ -19,6 +19,7 @@ const getWeather = ({ latitude, longitude }, callback) => {
       }
     })
     .then((data) => {
+      console.log(data);
       callback(undefined, data);
     });
 };

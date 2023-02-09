@@ -17,7 +17,6 @@ app.get("/", (req, res) => {
         res.status(404).json(error);
       } else {
         getWeather(data, (error, result) => {
-          console.log(data);
           if (error !== undefined) {
             res.status(404).json(error);
           } else {
