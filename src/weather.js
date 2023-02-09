@@ -1,5 +1,6 @@
 let dotEnv = require("dotenv");
 const path = require("path");
+import fetch from "node-fetch";
 
 let envLocation = path.format({
   root: __dirname,
