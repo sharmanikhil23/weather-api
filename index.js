@@ -20,6 +20,16 @@ app.get("/", (req, res) => {
           if (error !== undefined) {
             res.status(404).json(error);
           } else {
+            res.setHeader("Access-Control-Allow-Origin", "*");
+            res.setHeader(
+              "Access-Control-Allow-Methods",
+              "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+            ); // If needed
+            res.setHeader(
+              "Access-Control-Allow-Headers",
+              "X-Requested-With,content-type"
+            ); // If needed
+            res.setHeader("Access-Control-Allow-Credentials", true);
             res.status(200).type("json").send(data);
           }
         });
